@@ -1,0 +1,38 @@
+@prefix atom: <http://lv2plug.in/ns/ext/atom#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix midi: <http://lv2plug.in/ns/ext/midi#> .
+@prefix urid: <http://lv2plug.in/ns/ext/urid#> .
+
+<urn:midi-latch>
+	a lv2:Plugin ;
+	doap:name "MIDI Latch" ;
+	doap:license <http://opensource.org/licenses/isc> ;
+	lv2:requiredFeature urid:map ;
+	lv2:port [
+		a lv2:InputPort ,
+			atom:AtomPort ;
+		atom:bufferType atom:Sequence ;
+		atom:supports midi:MidiEvent ;
+		lv2:index 0 ;
+		lv2:symbol "midi_in" ;
+		lv2:name "MIDI In"
+	] , [
+		a lv2:OutputPort ,
+			atom:AtomPort ;
+		atom:bufferType atom:Sequence ;
+		atom:supports midi:MidiEvent ;
+		lv2:index 1 ;
+		lv2:symbol "midi_out" ;
+		lv2:name "MIDI Out"
+	] , [
+		a lv2:InputPort ,
+			lv2:ControlPort ;
+		lv2:index 2 ;
+		lv2:symbol "cc_number" ;
+		lv2:name "Latch CC Number" ;
+		lv2:default 64 ;
+		lv2:minimum 0 ;
+		lv2:maximum 127 ;
+		lv2:portProperty lv2:integer
+	] .

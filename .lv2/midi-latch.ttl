@@ -29,10 +29,30 @@
 		a lv2:InputPort ,
 			lv2:ControlPort ;
 		lv2:index 2 ;
+		lv2:symbol "cc_midi_channel" ;
+		lv2:name "Latch CC MIDI Channel" ;
+		lv2:default 1 ;
+		lv2:minimum 1 ;
+		lv2:maximum 16 ;
+		lv2:portProperty lv2:integer
+	] , [
+		a lv2:InputPort ,
+			lv2:ControlPort ;
+		lv2:index 3 ;
 		lv2:symbol "cc_number" ;
 		lv2:name "Latch CC Number" ;
 		lv2:default 64 ;
 		lv2:minimum 0 ;
 		lv2:maximum 127 ;
+		lv2:portProperty lv2:integer
+	] , [
+		a lv2:InputPort ,
+			lv2:ControlPort ;
+		lv2:index 4 ;
+		lv2:symbol "notes_midi_channel" ;
+		lv2:name "Notes MIDI Channel" ;
+		lv2:default 1 ;
+		lv2:minimum 1 ;
+		lv2:maximum 16 ;
 		lv2:portProperty lv2:integer
 	] .

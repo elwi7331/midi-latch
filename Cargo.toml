@@ -8,4 +8,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 lv2 = "0.6.0"
-wmidi = "3.1.0"
+wmidi = "3.1.0" # latest version supported by lv2
